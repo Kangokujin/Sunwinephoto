@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/sunwinephoto/main/assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<nav class="container fixed">
+<div id="hideMenu">
+<a href="/" id="img-nav" title="На главную страницу">
+</a>
+    <a href="{% url 'main' %}">Главная</a>
+    <a href="{% url 'portfolio' %}">Портфолио</a>
+    <a href="{% url 'blog' %}">Блог</a>
+    <a href="{% url 'about' %}">Обо мне</a>
+    <h1>Sunwinephoto</h1>
+</div>
+</nav>
+  </header>
+<div class="container">
+    {% block content %}{% endblock %}
+
+</div>
+</body>
+</html>
