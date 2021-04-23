@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="ru">
 <head>
@@ -7,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="/sunwinephoto/main/assets/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 <nav class="container fixed">
@@ -25,6 +27,7 @@
 <div class="container">
     {% block content %}{% endblock %}
 
+<script src="{% static 'bootstrap/js/bootstrap.css/bootstrap.min.js' %}"></script>
 </div>
 </body>
 </html>
