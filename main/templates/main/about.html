@@ -1,14 +1,15 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <title>Photosen &mdash; Colorlib Website Template</title>
+  <title>Sunwinephoto &mdash;</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+ <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
 
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
@@ -51,15 +52,15 @@
         <div class="row align-items-center">
 
           <div class="col-6 col-xl-2" data-aos="fade-down">
-            <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0">Photosen</a></h1>
+            <h1 class="mb-0"><a href="/" class="text-white h2 mb-0">Sunwinephoto</a></h1>
           </div>
           <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="/">Главная</a></li>
                 <li class="has-children">
-                  <a href="single.html">Gallery</a>
+                  <a href="/single">Галерея</a>
                   <ul class="dropdown">
                     <li><a href="#">Nature</a></li>
                     <li><a href="#">Portrait</a></li>
@@ -78,9 +79,9 @@
                     </li>
                   </ul>
                 </li>
-                <li><a href="services.html">Services</a></li>
-                <li class="active"><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="/services">Сервис</a></li>
+                <li><a href="/about-me">Обо мне</a></li>
+                <li><a href="/contact">Контакты</a></li>
               </ul>
             </nav>
           </div>
@@ -111,7 +112,6 @@
       </div>
       
     </header>
-
 
 
     <div class="site-section"  data-aos="fade">
