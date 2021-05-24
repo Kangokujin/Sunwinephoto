@@ -22,12 +22,18 @@ class Category(models.Model):
         default=0
     )
 
+    active = models.BooleanField(
+        default=True,
+        null=False,
+        blank=False
+    )
+
     image = models.ImageField(
         upload_to="images/category/"
     )
 
     def __str__(self):
-        return f'{self.order} - {self.title}'
+        return f'{self.active} {self.order} - {self.title}'
 
 
 class Photo(models.Model):
@@ -41,6 +47,12 @@ class Photo(models.Model):
 
     description = models.TextField(
         default='',
+        null=True,
+        blank=True
+    )
+
+    active = models.BooleanField(
+        default=True,
         null=False,
         blank=False
     )
@@ -58,5 +70,4 @@ class Photo(models.Model):
     )
 
     def __str__(self):
-        return self.title
-
+        return f'{self.active} {self.title}'
