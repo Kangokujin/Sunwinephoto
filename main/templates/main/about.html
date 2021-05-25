@@ -58,29 +58,18 @@
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
-                <li class="active"><a href="/">Главная</a></li>
+                <li><a href="/">Главная</a></li>
                 <li class="has-children">
                   <a href="/gallery">Галерея</a>
                   <ul class="dropdown">
-                    <li><a href="#">Nature</a></li>
-                    <li><a href="#">Portrait</a></li>
-                    <li><a href="/category/people">Люди</a></li>
-                    <li><a href="#">Architecture</a></li>
-                    <li><a href="#">Animals</a></li>
-                    <li><a href="#">Sports</a></li>
-                    <li><a href="#">Travel</a></li>
-                    <li class="has-children">
-                      <a href="#">Sub Menu</a>
-                      <ul class="dropdown">
-                        <li><a href="#">Menu One</a></li>
-                        <li><a href="#">Menu Two</a></li>
-                        <li><a href="#">Menu Three</a></li>
-                      </ul>
+                    {% for category in categories %}
+                    <li><a href="/category/{{category.slug}}/">{{category.title}}</a></li>
+                  {% endfor %}
                     </li>
                   </ul>
                 </li>
                 <li><a href="/services">Мои услуги</a></li>
-                <li><a href="/about-me">Обо мне</a></li>
+                <li class="active"><a href="/about-me">Обо мне</a></li>
                 <li><a href="/contact">Контакты</a></li>
               </ul>
             </nav>
@@ -92,9 +81,7 @@
                 <li>
                   <a href="https://www.facebook.com/elhvinasarkisova" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
                 </li>
-                <li>
-                  <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-                </li>
+                
                 <li>
                   <a href="https://www.instagram.com/sunwinephoto" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
                 </li>
@@ -135,13 +122,13 @@
             <img src="{% static 'images/photo_2021-05-06_17-45-33.jpg' %}" alt="Images" class="img-fluid">
           </div>
           <div class="col-md-4 ml-auto">
-            <h3 class="text-white">О себе</h3>
-            <p>Меня зовут Эльвина и я - фотограф 😊.
+            <h3 class="text-white mb-4">О себе</h3>
+            <p class="text-white mb-3">Меня зовут Эльвина и я - фотограф 😊.
               Фотография была моим хобби с самого детства. Повзрослев, я решила исполнить свою мечту и стать профи.
               Что я могу тебе предложить?
               Отличное времяпровождение на фотосессии, замечательные кадры, море позитива и долгосрочное сотрудничество!
               </p>
-            <p>Пиши, звони, и будем работать 😊.</p>
+            <p class="text-white mb-0">Пиши, звони, и будем работать 😊.</p>
           </div>
         </div>
 
@@ -149,33 +136,34 @@
         <div class="row site-section">
           <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5">
 
-            <img src="{% static 'images/person_1.jpg' %}" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
-            <h2 class="text-black font-weight-light mb-4">Jean Smith</h2>
-            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ab quas facilis obcaecati non ea, est odit repellat distinctio incidunt, quia aliquam eveniet quod deleniti impedit sapiente atque tenetur porro?</p>
+            <img src="{% static 'images/IMG_9063-31.jpg' %}" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+            <h2 class="text-white font-weight-light mb-4">Тхай Виталий</h2>
+            <p class="text-white mb-3">Мой дорогой и сердечный друг. А ещё незаменимый помощник и прекрасная модель. 
+              PS: Девчата, кстати он свободен (пока).</p>
             <p>
-              <a href="#" class="pl-0 pr-3"><span class="icon-twitter"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-facebook"></span></a>
+              <a href="https://www.instagram.com/kangokujin/" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+              <a href="https://www.facebook.com/profile.php?id=100015142929340" class="pl-3 pr-3"><span class="icon-facebook"></span></a>
+              <a href="https://web.telegram.org/#/im?p=@kangokujin" class="pl-3 pr-3"><span class="icon-telegram"></span></a>
             </p>
           </div>
           <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5">
-            <img src="{% static 'images/person_2.jpg' %}" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
-            <h2 class="text-black font-weight-light mb-4">Claire Smith</h2>
-            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ab quas facilis obcaecati non ea, est odit repellat distinctio incidunt, quia aliquam eveniet quod deleniti impedit sapiente atque tenetur porro?</p>
+            <img src="{% static 'images/7a6504de-7a7a-4fa3-b904-932c25e91d83.jpg' %}" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+            <h2 class="text-white font-weight-light mb-4">Loftroom Studio</h2>
+            <p class="text-white mb-3">Студия с которой я сотрудничаю и где я получила огромнеший опыт. Приходите к нам, будем фоткаться!</p>
             <p>
-              <a href="#" class="pl-0 pr-3"><span class="icon-twitter"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-facebook"></span></a>
+              <a href="https://www.instagram.com/loftroomstudio/" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+              <a href="https://www.facebook.com/loftroomuz" class="pl-3 pr-3"><span class="icon-facebook"></span></a>
+              <a href="https://web.telegram.org/#/im?p=@Loftroomstudio" class="pl-3 pr-3"><span class="icon-telegram"></span></a>
             </p>
           </div>
           <div class="col-md-6 col-lg-6 col-xl-4 text-center mb-5">
-            <img src="{% static 'images/person_4.jpg' %}" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
-            <h2 class="text-black font-weight-light mb-4">John Smith</h2>
-            <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ab quas facilis obcaecati non ea, est odit repellat distinctio incidunt, quia aliquam eveniet quod deleniti impedit sapiente atque tenetur porro?</p>
+            <img src="{% static 'images/IMG_2972.jpg' %}" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
+            <h2 class="text-white font-weight-light mb-4">Эльвина Саркисова</h2>
+            <p class="text-white mb-3">Это Я! Мой личный аккаунт, если захотите подружиться, то я всегда открыта для общения)</p>
             <p>
-              <a href="#" class="pl-0 pr-3"><span class="icon-twitter"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-facebook"></span></a>
+              <a href="https://www.instagram.com/el.sarkisova/" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+              <a href="https://www.facebook.com/elhvinasarkisova" class="pl-3 pr-3"><span class="icon-facebook"></span></a>
+              <a href="https://web.telegram.org/#/im?p=@El_Sarkisova" class="pl-3 pr-3"><span class="icon-telegram"></span></a>
             </p>
           </div>
         </div>
