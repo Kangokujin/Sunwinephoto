@@ -45,6 +45,7 @@ class Photo(models.Model):
         default=''
     )
 
+    
     description = models.TextField(
         default='',
         null=True,
@@ -71,3 +72,37 @@ class Photo(models.Model):
 
     def __str__(self):
         return f'{self.active} {self.title}'
+
+
+class Announcement(models.Model):
+
+    title = models.CharField(
+        max_length=256,
+        default='',
+        blank=False,
+        null=False
+    )
+
+    slug = models.CharField(
+        max_length=100,
+        null=False,
+        blank=False,
+        default=''
+    )
+
+
+    text = models.TextField(
+        null=False,
+        blank=False
+    )
+
+    photo = models.ImageField(
+        upload_to='images/news/'
+    )
+
+    created_at = models.DateTimeField(
+        auto_created=True
+    )
+
+    def __str__(self):
+        return f'{self.title}'

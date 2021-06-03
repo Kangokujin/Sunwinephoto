@@ -55,6 +55,8 @@
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li><a href="/">Главная</a></li>
+                <li><a href="/news">Новости</a></li>
+
                 <li class="has-children">
                   <a href="/gallery">Галерея</a>
                   <ul class="dropdown">
@@ -145,6 +147,22 @@
                   <input type="subject" id="subject" name="subject" class="form-control">
                 </div>
               </div>
+              
+              <div class="row form-group">
+
+                <div class="col-md-12" onclick='order()'>
+                  <label class="text-white" for="order">Заказать фотосессию</label> 
+                  <input type="checkbox" id="order" name="order" class="form-control">
+                </div>
+              </div>
+
+              <div class="row form-group" id = 'dateForm' style='display: none;'>
+
+                <div class="col-md-12">
+                  <label class="text-white" for="date">Дата</label> 
+                  <input id="datebox" type="date" id="date" name="date" class="form-control">
+                </div>
+              </div>
 
               <div class="row form-group">
                 <div class="col-md-12">
@@ -181,6 +199,23 @@
 
    
   </div>
+  <script>
+    let tagged = 0;
+  </script>
+  <script>
+    order = () => {
+      let dateForm = document.getElementById('dateForm');
+      if (tagged){
+        dateForm.style.display = 'none'
+        tagged = 0
+      }
+      else{
+        dateForm.style.display = 'block'
+        tagged = 1
+      }
+    }
+  </script>
+
   <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
   <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
   <script src="{% static 'js/jquery-ui.js' %}"></script>

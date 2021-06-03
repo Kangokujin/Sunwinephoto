@@ -57,15 +57,22 @@ class ContactView(View):
         
         form = forms.ContactForm(request.POST)
         # check whether it's valid:
+        logger.error(form)
         if form.is_valid():
 
             message = request.POST.get('message')
             name = request.POST.get('name')
             surname = request.POST.get('surname')
             phone = request.POST.get('phone')
+            order = request.POST.get('order', 0)
+            date = request.POST.get('date', 0)
             subject = request.POST.get('subject')
 
-            text = f"""Новое сообщение от: {name} {surname}\n\nТелефон: {phone}\nТема: {subject}\n\nТекст: {message}"""
+            order_text = 'да' if order else 'нет'
+            date_text = date if order else 'нет'
+
+
+            text = f"""Новое сообщение от: {name} {surname}\n\nТелефон: {phone}\nТема: {subject}\n\nТекст: {message}.\n\nЗаказ: {order_text}.\nКогда: {date}"""
 
             requests.get(f'https://api.telegram.org/bot123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11/sendMessage')
             
@@ -105,3 +112,34 @@ class CategoryListView(View):
         }
 
         return render(request, 'main/gallery.html', data)
+
+
+class NewsView(View):
+
+    def get(self, request):
+
+        news = models.Announcement.objects.all()
+
+        data = {
+            'news': news
+        }
+
+        return render(request, 'main/news.html', data)
+
+    
+class SingleNewsView(View):
+
+    def get(self, request, slug):
+        
+        try:
+            news = models.Announcement.objects.get(slug=slug)
+        except models.Announcement.DoesNotExist as e:
+            logger.error(e)
+
+            return render(request, 'main/404.html')
+
+        data = {
+            'post': news
+        }
+
+        return render(request, 'main/article.html', data)

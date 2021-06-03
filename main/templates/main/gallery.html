@@ -58,14 +58,14 @@
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
                 <li><a href="/">Главная</a></li>
+                <li><a href="/news">Новости</a></li>
+
                 <li class="has-children active">
                   <a href="/gallery">Галерея</a>
                   <ul class="dropdown">
                     {% for category in categories %}
                     <li><a href="/category/{{category.slug}}/">{{category.title}}</a></li>
-                    {% endfor %}
-                      
-                 
+                    {% endfor %}                       
                   </ul>
                 </li>
                 <li><a href="/services">Мои услуги</a></li>

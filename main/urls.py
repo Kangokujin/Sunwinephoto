@@ -6,5 +6,9 @@ urlpatterns = [
     path('gallery', views.gallery, name='gallery'),
     path('services', views.services, name='services'),
     path('contact', views.ContactView.as_view(), name='contact'),
-    path('category/<str:category>/', views.CategoryListView.as_view())
+    path('category/<str:category>/', views.CategoryListView.as_view()),
+    path('news', views.NewsView.as_view()),
+    path('news/single/<str:slug>', views.SingleNewsView.as_view())
+
+
 ]
